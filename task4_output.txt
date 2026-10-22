@@ -1,0 +1,7 @@
+=== Workload 1: sleep(0.0001 * (i % 20))  [task spec] ===
+Ideal balanced time (sum of costs / 4): 237.5 ms
+Strategy               | Total (ms) | First done | Last done | Delta (ms) | Items per worker
+--------------------------------------------------------------------------------------------
+A: Static blocks       |      343.7 |      330.4 |     343.6 |       13.2 | [250, 250, 250, 250]
+B: Dynamic chunk=1     |      293.0 |      291.2 |     293.0 |        1.8 | [280, 238, 235, 247]
+B: Dynamic chunk=5     |      296.6 |      287.0 |     296.5 |        9.6 | [240, 265, 285, 210]
