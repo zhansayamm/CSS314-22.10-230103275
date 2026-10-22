@@ -1,0 +1,22 @@
+Platform : macOS-14.0-arm64-arm-64bit-Mach-O
+Array    : 30,000,000 float64 (240 MB per array)
+Cores    : testing [1, 2, 8] (max = 8)
+
+=== Kernel A (memory-bound copy) ===
+Cores |  Time (ms) |  Speedup | Efficiency |   Bandwidth
+--------------------------------------------------------
+    1 |        8.4 |    1.00x |     100.0% |    57.4 GB/s
+    2 |        8.4 |    0.99x |      49.6% |    56.9 GB/s
+    8 |        8.5 |    0.99x |      12.3% |    56.6 GB/s
+
+=== Kernel B (compute-bound sin*cos+tan) ===
+Cores |  Time (ms) |  Speedup | Efficiency
+------------------------------------------
+    1 |      638.8 |    1.00x |     100.0%
+    2 |      324.6 |    1.97x |      98.4%
+    8 |      187.6 |    3.40x |      42.6%
+
+=== VERDICT ===
+Efficiency at 8 cores: Kernel A = 12.3%, Kernel B = 42.6%
+=> Kernel A stalled due to memory bandwidth saturation
+   Kernel B scaled well to 2 cores and sublinearly to 8, consistent with heterogeneous P/E cores rather than memory limits.
