@@ -1,0 +1,16 @@
+Student ID : 230103275
+Platform   : macOS-14.0-arm64-arm-64bit-Mach-O
+Max cores  : 8  (os.cpu_count())
+Array size : 20,000,000 float64  |  Amdahl P = 0.95  |  median of 5 runs
+Seed       : 230103275
+Serial sum : 9999499.438002
+
+ Cores | Wall Time (ms) | Speedup S(p) | Amdahl Upper Bound
+-----------------------------------------------------------
+     1 |          6.432 |        1.00x |              1.00x
+     2 |          5.187 |        1.24x |              1.90x
+     4 |          4.509 |        1.43x |              3.48x
+     8 |          4.046 |        1.59x |              5.93x
+    16 |          3.903 |        1.65x |              9.14x
+
+Amdahl limit as p -> infinity: 20.0x
