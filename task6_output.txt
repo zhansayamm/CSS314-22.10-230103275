@@ -1,0 +1,19 @@
+Threads            : 4
+Increments/thread  : 2000000
+Expected final     : 8000000
+
+--- 1. Unsynchronized (race condition) ---
+Expected final value : 8000000
+Actual final value   : 2647504
+Lost updates         : 5352496 (66.91%)
+Wall time            : 9.3 ms
+
+--- 2. Atomic fetch-and-add ---
+Final value          : 8000000  [CORRECT]
+Wall time            : 195.4 ms
+Penalty vs. race     : +186.1 ms (21.07x slower)
+
+--- 3. Mutex lock ---
+Final value          : 8000000  [CORRECT]
+Wall time            : 184.8 ms
+Penalty vs. race     : +175.5 ms (19.93x slower)
