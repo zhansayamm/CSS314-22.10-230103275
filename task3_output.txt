@@ -1,0 +1,12 @@
+Increments/thr : 50000000
+Cache line     : 64 bytes
+
+Variant                  |    Wall Time | Slowdown vs Unpadded
+-------------------------+--------------+---------------------
+Unpadded shared          |    1360.7 ms | 1.00x (baseline)
+Padded (64-byte)         |     422.0 ms | 3.22x faster
+Local variable           |     166.3 ms | 8.18x faster
+
+Execution ratio (Unpadded / Padded) : 3.22
+Execution ratio (Unpadded / Local)  : 8.18
+Correctness check                   : PASS
