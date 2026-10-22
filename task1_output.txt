@@ -1,0 +1,14 @@
+Student ID    : 230103275
+OS            : Darwin 23.0.0 (Darwin Kernel Version 23.0.0: Fri Sep 15 14:41:34 PDT 2023; root:xnu-10002.1.13~1/RELEASE_ARM64_T8103)
+Platform      : macOS-14.0-arm64-arm-64bit-Mach-O
+Architecture  : arm64
+CPU model     : Apple M1
+Logical cores : 8
+
+=== Serial Computation ===
+Seed          : 230103275
+Array size    : 20,000,000 float64 elements
+Sum           : 9999499.438002
+Std deviation : 0.2887201115
+Generation    : 126.842 ms (not included in compute time)
+Compute time  : 78.683 ms (serial, wall-clock)
